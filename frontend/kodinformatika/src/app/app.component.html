@@ -1,0 +1,25 @@
+<h1>Online valutaváltó</h1>
+
+<form (ngSubmit)="calculate()">
+  <span>
+      <label for="amount">Összeg:</label>
+      <input [(ngModel)]="change.amount" name="amount" type="number"/>
+  </span>
+  <span>
+    <label for="from">Összeg:</label>
+    <select name="from" [(ngModel)]="change.from">
+      <option *ngFor="let symbol of symbols" [value]="symbol">{{symbol}}</option>
+    </select>
+  </span>
+  <span>
+    <label for="to">Összeg:</label>
+    <select name="to" [(ngModel)]="change.to">
+      <option *ngFor="let symbol of symbols" [value]="symbol">{{symbol}}</option>
+    </select>
+  </span>
+  <div>
+    <button type="submit">Mehet</button>
+  </div>
+</form>
+<div><label>{{from}}</label></div>
+<div><label>{{to}}</label></div>
